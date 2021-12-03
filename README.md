@@ -36,8 +36,8 @@ The spread of the pandemic is covered by a limited set of rules:
 A “contact” is defined as a person that’s directly adjacent to the infected, horizontally, vertically or diagonally (not wrapping around the edges of the grid)
 
 ## TO DO
-- [ ] learn java basics
 - [ ] how to compile a file in java
+- [ ] learn java basics
 - [ ] check input validation
 - [ ] make a 2d array
 - [ ] figure out what algorithm to use, maybe floodfill?
@@ -78,3 +78,59 @@ public class FirstJavaProgram {
 - Java program start from the main() method, this is mandatory
 
 #### Objects and classes
+- *Object* -- an instance of a class
+- *Class* -- a tenplate/blueprint that descibes behavior/state of the object
+
+An objects state is stored in fields and behavior is shown via methods. Methods operate on the internal state of an object and the object-to-object communication is down via methods.
+
+```java
+public class TechnicalInterview {
+    String  assignment;
+    int     days;
+    String  company;
+
+    public TechinicalInterview(String name){
+        System.out.println("Name is : " + name);
+    }
+    
+    void    calculateDaysLeft(){}
+    void    getCompany(){}
+}
+```
+
+A class can contain:
+- *local variables* -- variables defined inside methods, the lifetime of these are within the methods
+- *instance variables* -- variables within a class but outside of an method, these can be accessed within all the methods
+- *class variables* -- variables declared within the class, outside a method, with static keyword.
+
+##### Constructors
+Every class has a constructor (default included), at least one constructor will be invoked when creating an object. The constructor has the same name as the class. 
+
+##### Creating an object
+An object is created from a class, the new keyword is used to create a new object. 
+- declaration -- a variable declaration with a variable name with an object type
+- instantiation -- new keyword is used to create the object
+- initialization -- the new keyword is followed by a call to a constructor that initializes the new objct
+
+```java
+public static void main(String []args) {
+    TechnicalInterview myTechnicalInterview = new TechnicalInterview("java");
+}
+```
+
+#### Accessing instance variable and methods
+Instance variables and methods are accessed via created objects:
+- create an object: `Object Reference = new Constructir();`
+- call a variable: `ObjectReference.variableName;`
+- call a class method: `ObjectReference.method();`
+
+#### Variable types
+
+##### Local variables
+- declared in methods, constructors or blocks
+- created when the method, constructor or block is entered, and destroyed once this block. constructor or method ends
+- only visible within the declared method, block or constructor
+- no default value; must be assigned an initial value
+
+##### Instance variables
+- 
