@@ -46,11 +46,6 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 
 # JAVA
 
-<!-- https://www.tutorialspoint.com/java/index.htm -->
-<!-- https://www.guru99.com/java-platform.html -->
-<!-- https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/ -->
-<!-- https://www.youtube.com/watch?v=_JYlD7tzwFw -->
-
 #### Compiling java
 - `java -version` -- check which version of java is downloaded
 - `javac -version` -- check which version of javac is downloaded
@@ -133,4 +128,17 @@ Instance variables and methods are accessed via created objects:
 - no default value; must be assigned an initial value
 
 ##### Instance variables
-- 
+- declared in a class but outside a method
+- created when an object is created and destroyed when the object is destroyed
+- visible for all method, constructors or blocks within the class
+- have default values, 0 for int, null for object references and false for booleans
+- can be accessed by calling the name inside the class, wihtin static methods be called using the fully qualified name: `ObjectReference.VariableName`
+
+<!-- CONTINUE HERE -->
+<!-- https://www.tutorialspoint.com/java/java_variable_types.htm -->
+
+<!-- https://www.tutorialspoint.com/java/index.htm -->
+<!-- https://www.guru99.com/java-platform.html -->
+<!-- https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/ -->
+<!-- https://www.youtube.com/watch?v=_JYlD7tzwFw -->
+<!-- https://www.w3schools.com/java/java_methods.asp -->
