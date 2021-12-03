@@ -37,6 +37,7 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 
 ## TO DO
 - [ ] learn java basics
+- [ ] how to compile a file in java
 - [ ] check input validation
 - [ ] make a 2d array
 - [ ] figure out what algorithm to use, maybe floodfill?
@@ -49,3 +50,22 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 <!-- https://www.guru99.com/java-platform.html -->
 <!-- https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/ -->
 <!-- https://www.youtube.com/watch?v=_JYlD7tzwFw -->
+
+#### Compiling java
+- `java -version` -- check which version of java is downloaded
+- `javac -version` -- check which version of javac is downloaded
+- `javac FileName.java` -- the .java file will be translated into .class file
+- `java FileName` -- execute the program, you should not append the .java etension to the file name while running the program
+
+#### First program
+```java
+public class FirstJavaProgram {
+    public static void main(String []args) {
+        System.out.println("Hello");
+    }
+}
+```
+
+- `public class FirstJavaProgram {` -- Every java application must have at least one class definition that consists of `class` keyword followed by class name. Java can have only one public class, the filename should be the same as the public class name. 
+- `public static void main(String []args) {` -- `public` makes the main method public which makes this method callable from outside the class. `static` we dont need to reacte a method for static methods to run. `main` the methods name, this is the entry point method from which the program starts running. `String []args` used for command line argumentsthat are passes as string.
+- `System.out.println("Hello");` -- This method prints the contents into the consule and adds a new line.
