@@ -69,3 +69,12 @@ public class FirstJavaProgram {
 - `public class FirstJavaProgram {` -- Every java application must have at least one class definition that consists of `class` keyword followed by class name. Java can have only one public class, the filename should be the same as the public class name. 
 - `public static void main(String []args) {` -- `public` makes the main method public which makes this method callable from outside the class. `static` we dont need to reacte a method for static methods to run. `main` the methods name, this is the entry point method from which the program starts running. `String []args` used for command line argumentsthat are passes as string.
 - `System.out.println("Hello");` -- This method prints the contents into the consule and adds a new line.
+
+#### Basic syntax
+- Java is case sensitive
+- For all class names the first letter of every word should be uppercase `MyClassName`
+- All method names should start with lowercase and every inner word with uppercase `myMethodName()`
+- Program file name must match the public class name and append .java to it otherwise the program will not compile. In case there is no public class present, the file name can be different than the class name.
+- Java program start from the main() method, this is mandatory
+
+#### Objects and classes
