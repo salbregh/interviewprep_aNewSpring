@@ -34,6 +34,9 @@ The spread of the pandemic is covered by a limited set of rules:
 A “contact” is defined as a person that’s directly adjacent to the infected, horizontally, vertically or diagonally (not wrapping around the edges of the grid)
 
 ## TO DO
-[ ] learn java basics
-[ ] check input validation
-[ ] 
+- [ ] learn java basics
+- [ ] check input validation
+- [ ] make a 2d array
+- [ ] figure out what algorithm to use, maybe floodfill?
+- [ ] write a main to test some cases
+- [ ] perfect code
