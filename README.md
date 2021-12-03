@@ -9,6 +9,7 @@ Your mission, should you choose to accept it, is to build a simulation (using JA
 
 
 For example, a simulation on an 8x8 grid, with 7 rounds, an infection threshold of 3, a recovery threshold of 6 and 3 infected persons to start with can be run with a command similar to the following:
+
 `java pandemic 8 7 3 6 [<4,7>,<4,8>,<5,8>]`
 
 After a number of rounds the output should be displayed.
