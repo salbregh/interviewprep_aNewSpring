@@ -1,6 +1,8 @@
-# interviewprep_aNewSpring
+# Technical interview practive: assignment given by aNewSpring
 
-The technical assignment from a New Spring is to be done in Java, this is my first time writing code in Java. 
+The technical assignment given by aNewSpring is to be done in Java. This is a practise technical interview provided by Codam. This is my first time writing code in Java.
+
+<!-- add in about anewspring? -->
 
 ## Assignment
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this,simulations of the spread of the virus are used. 
@@ -39,4 +41,7 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 - [ ] make a 2d array
 - [ ] figure out what algorithm to use, maybe floodfill?
 - [ ] write a main to test some cases
-- [ ] perfect code
+- [ ] perfect the code
+
+# JAVA
+
