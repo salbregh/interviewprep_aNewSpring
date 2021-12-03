@@ -15,10 +15,15 @@ For example, a simulation on an 8x8 grid, with 7 rounds, an infection threshold 
 After a number of rounds the output should be displayed.
 
 > program name: pandemic
+
 > 1st parameter: n * n grid: 8
+
 > 2nd parameter: numer of rounds: 7
+
 > 3rd parameter: infection threshold: 3
+
 > 4th parameter: recovery threshold: 6
+
 > 5th parameter: coordinates infected people: [<4,7>,<4,8>,<5,8>]
 
 ## Rules
