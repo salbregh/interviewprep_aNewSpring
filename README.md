@@ -18,15 +18,20 @@ After a number of rounds the output should be displayed.
 
 > program name: pandemic
 
-> 1st parameter: n * n grid: 8
+> 1st parameter: n * n grid: `8`
 
-> 2nd parameter: numer of rounds: 7
+> 2nd parameter: numer of rounds: `7`
 
-> 3rd parameter: infection threshold: 3
+> 3rd parameter: infection threshold: `3`
 
-> 4th parameter: recovery threshold: 6
+> 4th parameter: recovery threshold: `6`
 
-> 5th parameter: coordinates infected people: [<4,7>,<4,8>,<5,8>]
+> 5th parameter: coordinates infected people: `[<4,7>,<4,8>,<5,8>]`
+
+#### How I will handle the input
+Seeing I can't figure out how to read the coordinates as argmument, I choose to change this to : `"[<4,7>,<4,8>,<5,8>]"` 
+So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,8>,<5,8>]"`
+
 
 ## Rules
 The spread of the pandemic is covered by a limited set of rules:
@@ -52,6 +57,8 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 - `javac FileName.java` -- the .java file will be translated into .class file
 - `java FileName` -- execute the program, you should not append the .java etension to the file name while running the program
 
+- on my laptop I had to `brew install openjdk`, following `brew info openjdk` and run the command `sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk` to symlink, to get the javac command working.
+
 #### First program
 ```java
 public class FirstJavaProgram {
@@ -62,7 +69,7 @@ public class FirstJavaProgram {
 ```
 
 - `public class FirstJavaProgram {` -- Every java application must have at least one class definition that consists of `class` keyword followed by class name. Java can have only one public class, the filename should be the same as the public class name. 
-- `public static void main(String []args) {` -- `public` makes the main method public which makes this method callable from outside the class. `static` we dont need to reacte a method for static methods to run. `main` the methods name, this is the entry point method from which the program starts running. `String []args` used for command line argumentsthat are passes as string.
+- `public static void main(String []args) {` -- `public` makes the main method public which makes this method callable from outside the class. `static` we dont need to reacte a method for static methods to run. `main` the methods name, this is the entry point method from which the program starts running. `String []args` used for command line arguments that are passes as  string.
 - `System.out.println("Hello");` -- This method prints the contents into the consule and adds a new line.
 
 #### Basic syntax
