@@ -32,16 +32,12 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	ListIterator<Integer>	it = coordinatesArray.listIterator();
 	Integer x = 0;
 	Integer y = 0;
-	System.out.println("HIER");
 	while (it.hasNext()) {
 		x = it.next() - 1;
 		y = it.next() - 1;
-		System.out.println("X" + x);
-		System.out.println("Y" + y);
-		array[x][y] = 1;
-		// System.out.println("current" + it.next());
-		// System.out.println("next" + it.next());
-		// break ;
+		// System.out.println("X" + x);
+		// System.out.println("Y" + y);
+		array[y][x] = 1;
 	}
 
 	for (Integer i = 0; i < grid; i++)
@@ -52,31 +48,84 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 	Integer		i = 0;
 	Integer		numb = 0;
-	char		pos;
+	String		pos = "";
 	LinkedList<Integer> coordinatesArray = new LinkedList<Integer>();
 	
-	//	split coordinates into a list
 	while (i < Coordinates.length()) {
-		if (Coordinates.charAt(i) >= '0' && Coordinates.charAt(i) <= '9') {
-			pos = Coordinates.charAt(i);
+		if (Coordinates.charAt(i) >= '0' && Coordinates.charAt(i) <= '9' ) {
+			while (Coordinates.charAt(i) >= '0' && Coordinates.charAt(i) <= '9') {
+				pos = pos + Coordinates.charAt(i);
+				// System.out.println(pos);
+				i++;
+			}
 			numb = Integer.parseInt(String.valueOf(pos));
+			// System.out.println("numb: " + numb);
+			// System.out.println("grid: " + grid);
 			if (numb > grid) {
-				System.out.println("invalid input");
+				System.out.println("hier invalid input");
 				System.exit(0);
 			}
 			coordinatesArray.add(numb);
+			pos = "";
 		}
 		i++;
 	}
 	return (coordinatesArray);
 }
 
+static void infection(int[][] gridArray, int grid, int infection_threshold) {
+	Integer		count = 0;
+	// Integer		x = 0;
+	// Integer		y = 0;
+
+	for (Integer y = 0; y < grid; y++) {
+		for (Integer x = 0; x < grid; x++) {
+			Integer temp = gridArray[y][x];
+			gridArray[y][x] = 9;
+			if (x + 1 < grid && gridArray[y][x+1] == 1)	
+				count++;
+			if (x - 1 >= 0 && gridArray[y][x-1] == 1)
+				count++;
+			if (y + 1 < grid && gridArray[y+1][x] == 1)
+				count++;
+			if (y - 1 >= 0 && gridArray[y-1][x] == 1)
+				count++;
+			if (y + 1 < grid && x + 1 < grid && gridArray[y+1][x+1] == 1)
+				count++;
+			if (y + 1 < grid && x - 1 >= 0 && gridArray[y+1][x-1] == 1)
+				count++;
+			if (y - 1 >= 0 && x + 1 < grid && gridArray[y-1][x+1] == 1)
+				count++;
+			if (y - 1 >= 0 && x - 1 >= 0 && gridArray[y-1][x-1] == 1)
+				count++;
+			System.out.println("count : " + count);
+			System.out.println("recov : " + infection_threshold);
+			for (Integer i = 0; i < grid; i++)
+				System.out.println(Arrays.toString(gridArray[i]));
+			if (count >= infection_threshold && temp != 1) {
+				System.out.println("hier");
+				gridArray[y][x] = 2;
+			}
+			else
+				gridArray[y][x] = temp;
+				
+			count = 0;
+		}
+	}
+	for (Integer x = 0; x < grid; x++) {
+		for (Integer y = 0; y < grid ; y++) {
+			if (gridArray[y][x] == 2)
+				gridArray[y][x] = 1;
+		}
+	}
+	for (Integer i = 0; i < grid; i++)
+		System.out.println(Arrays.toString(gridArray[i]));
+}
+
 public static void main(String[] args) {
-	// a check to see if all arguments are passed in 
-	if (args.length != 5)
-	{
+	if (args.length != 5) {
 		System.out.println("invalid input");
-		return ;
+		System.exit(0);
 	}
     int 	grid = Integer.parseInt(args[0]);
     int 	rounds = Integer.parseInt(args[1]);
@@ -105,6 +154,12 @@ public static void main(String[] args) {
 	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
 
 	gridArray = createGrid(grid, coordinatesArray);
+
+	Integer round = 0;
+	while (round < rounds) {
+		infection(gridArray, grid, infection_threshold);
+		round++;
+	}
 }
 
 }
