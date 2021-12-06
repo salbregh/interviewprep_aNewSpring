@@ -27,7 +27,6 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 			array[i][j] = 0;
 		}
 	}
-	
 	// fill the grid with the coordinates
 	ListIterator<Integer>	it = coordinatesArray.listIterator();
 	Integer x = 0;
@@ -35,8 +34,6 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	while (it.hasNext()) {
 		x = it.next() - 1;
 		y = it.next() - 1;
-		// System.out.println("X" + x);
-		// System.out.println("Y" + y);
 		array[y][x] = 1;
 	}
 
@@ -59,10 +56,8 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 				i++;
 			}
 			numb = Integer.parseInt(String.valueOf(pos));
-			// System.out.println("numb: " + numb);
-			// System.out.println("grid: " + grid);
 			if (numb > grid) {
-				System.out.println("hier invalid input");
+				System.out.println("invalid input");
 				System.exit(0);
 			}
 			coordinatesArray.add(numb);
@@ -73,15 +68,11 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 	return (coordinatesArray);
 }
 
-static void infection(int[][] gridArray, int grid, int infection_threshold) {
+static void infection(int[][] gridArray, int grid, int infection_threshold, int recovery_threshold) {
 	Integer		count = 0;
-	// Integer		x = 0;
-	// Integer		y = 0;
 
 	for (Integer y = 0; y < grid; y++) {
 		for (Integer x = 0; x < grid; x++) {
-			Integer temp = gridArray[y][x];
-			gridArray[y][x] = 9;
 			if (x + 1 < grid && gridArray[y][x+1] == 1)	
 				count++;
 			if (x - 1 >= 0 && gridArray[y][x-1] == 1)
@@ -98,26 +89,28 @@ static void infection(int[][] gridArray, int grid, int infection_threshold) {
 				count++;
 			if (y - 1 >= 0 && x - 1 >= 0 && gridArray[y-1][x-1] == 1)
 				count++;
-			System.out.println("count : " + count);
-			System.out.println("recov : " + infection_threshold);
-			for (Integer i = 0; i < grid; i++)
-				System.out.println(Arrays.toString(gridArray[i]));
-			if (count >= infection_threshold && temp != 1) {
-				System.out.println("hier");
+			// System.out.println("count : " + count);
+			// System.out.println("recov : " + infection_threshold);
+			
+			if (count > infection_threshold && gridArray[y][x] == 0)
 				gridArray[y][x] = 2;
-			}
-			else
-				gridArray[y][x] = temp;
-				
+			else if (count > recovery_threshold && gridArray[y][x] == 1)
+				gridArray[y][x] = 3;
 			count = 0;
 		}
 	}
+	System.out.println("voor terug zetten:");
+	for (Integer i = 0; i < grid; i++)
+				System.out.println(Arrays.toString(gridArray[i]));
 	for (Integer x = 0; x < grid; x++) {
 		for (Integer y = 0; y < grid ; y++) {
 			if (gridArray[y][x] == 2)
 				gridArray[y][x] = 1;
+			if (gridArray[y][x] == 3)
+				gridArray[y][x] = 0;
 		}
 	}
+	System.out.println("hier");
 	for (Integer i = 0; i < grid; i++)
 		System.out.println(Arrays.toString(gridArray[i]));
 }
@@ -157,7 +150,7 @@ public static void main(String[] args) {
 
 	Integer round = 0;
 	while (round < rounds) {
-		infection(gridArray, grid, infection_threshold);
+		infection(gridArray, grid, infection_threshold, recovery_threshold);
 		round++;
 	}
 }
