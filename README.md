@@ -1,10 +1,11 @@
-# Technical interview practive: assignment given by aNewSpring
+# Virus spread simulation
+Technical interview practise, an assignment given by aNewSpring
 
-The technical assignment given by aNewSpring is to be coded in Java. This is a practise technical interview provided by Codam. This is my first time writing code in Java, so it might be a bit messy :innocent:.
+The assignment given by aNewSpring is to be coded in Java. This is a practise technical interview simulation provided by Codam. This is my first time writing code in Java, so it might be a bit messy :innocent:.
 <!-- add in about anewspring? -->
 
 ## Assignment
-The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this,simulations of the spread of the virus are used. 
+The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
 
 Your mission, should you choose to accept it, is to build a simulation (using JAVA) that models this spread on a grid of n*n persons. The simulation, running over the course of a number of iterations, or “rounds”, will be based on the simple assumption that the virus spreads through contact between adjacent people. If the number of contacts reaches a certain threshold, a person will become infected. When an infected person is surrounded by more than a certain threshold of infected people, the virus will die out and that person will recover and become uninfected again.
 
@@ -28,8 +29,14 @@ After a number of rounds the output should be displayed.
 > 5th parameter: coordinates infected people: `[<4,7>,<4,8>,<5,8>]`
 
 #### How I will handle the input
-Seeing I can't figure out how to read the coordinates as argmument, I choose to change this to : `"[<4,7>,<4,8>,<5,8>]"` 
+Seeing I can't figure out how to read the coordinates as argmuments I choose to add double quotes to the last argument so that I am able to parse through it as a string `"[<4,7>,<4,8>,<5,8>]"`.
 So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,8>,<5,8>]"`
+
+###### Error checking on the given input
+The program will exit if:
+- An incorrect amount of arguments is passed.
+- An argument is passed as 0 or negative. 
+- An coordinate is outside of the grid.
 
 
 ## Rules
@@ -40,13 +47,14 @@ The spread of the pandemic is covered by a limited set of rules:
 A “contact” is defined as a person that’s directly adjacent to the infected, horizontally, vertically or diagonally (not wrapping around the edges of the grid)
 
 ## TO DO
-- [ ] how to compile a file in java
-- [ ] learn java basics
-- [ ] check input validation
-- [ ] make a 2d array
-- [ ] figure out what algorithm to use, maybe floodfill?
+- [x] how to compile a file in java
+- [x] learn java basics
+- [x] check input validation
+- [x] make a 2d array
+- [ ] how to check for contacts
 - [ ] write a main to test some cases
-- [ ] perfect the code
+- [ ] add in a makefile
+- [ ] scripts that will runs tests
 
 # JAVA
 
@@ -62,7 +70,7 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 ```java
 public class FirstJavaProgram {
     public static void main(String []args) {
-        System.out.println("Hello");
+        System.out.println("VIRUS SPREAD");
     }
 }
 ```
@@ -78,26 +86,6 @@ public class FirstJavaProgram {
 - Program file name must match the public class name and append .java to it otherwise the program will not compile. In case there is no public class present, the file name can be different than the class name.
 - Java program start from the main() method, this is mandatory
 
-#### Objects and classes
-- *Object* -- an instance of a class
-- *Class* -- a tenplate/blueprint that descibes behavior/state of the object
-
-An objects state is stored in fields and behavior is shown via methods. Methods operate on the internal state of an object and the object-to-object communication is down via methods.
-
-```java
-public class TechnicalInterview {
-    String  assignment;
-    int     days;
-    String  company;
-
-    public TechinicalInterview(String name){
-        System.out.println("Name is : " + name);
-    }
-    
-    void    calculateDaysLeft(){}
-    void    getCompany(){}
-}
-```
 
 
 
