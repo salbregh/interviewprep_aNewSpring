@@ -1,7 +1,6 @@
-# Virus spread simulation
-Technical interview practise, an assignment given by aNewSpring
-
-The assignment given by aNewSpring is to be coded in Java. This is a practise technical interview simulation provided by Codam. This is my first time writing code in Java, so it might be a bit messy :innocent:.
+# Virus spread simulation :mask: :microbe:
+Technical interview practise, an assignment given by aNewSpring.
+This is a practise technical interview simulation provided by Codam. The assignment is to be coded in Java This is my first time writing code in Java, so it might be a bit messy :innocent:.
 <!-- add in about anewspring? -->
 
 ## Assignment
@@ -38,7 +37,6 @@ The program will exit if:
 - An argument is passed as 0 or negative. 
 - An coordinate is outside of the grid.
 
-
 ## Rules
 The spread of the pandemic is covered by a limited set of rules:
 - Any person with a number of infected contacts larger than the infection threshold will become infected
@@ -55,6 +53,8 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 - [ ] write a main to test some cases
 - [ ] add in a makefile
 - [ ] scripts that will runs tests
+
+
 
 # JAVA
 
