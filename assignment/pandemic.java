@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+
 public class pandemic {
 
 /*
@@ -33,9 +35,7 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	Integer y = 0;
 	while (it.hasNext()) {
 		x = it.next() - 1;
-		System.out.println("x: " + x);
 		y = it.next() - 1;
-		System.out.println("y: " + y);
 		array[y][x] = 1;
 	}
 
@@ -54,11 +54,9 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 		if (Coordinates.charAt(i) >= '0' && Coordinates.charAt(i) <= '9' ) {
 			while (Coordinates.charAt(i) >= '0' && Coordinates.charAt(i) <= '9') {
 				pos = pos + Coordinates.charAt(i);
-				// System.out.println(pos);
 				i++;
 			}
 			numb = Integer.parseInt(String.valueOf(pos));
-			// invalid input if numb is bigger than grid, or <= 0
 			if (numb > grid || numb <= 0) {
 				System.out.println("invalid input");
 				System.exit(0);
@@ -92,9 +90,7 @@ static void infection(int[][] gridArray, int grid, int infection_threshold, int 
 				count++;
 			if (y > 0 && x > 0 && (gridArray[y-1][x-1] == 1 || gridArray[y-1][x-1] == 3))
 				count++;
-			// System.out.println("count : " + count);
-			// System.out.println("recov : " + infection_threshold);
-			
+
 			if (count > infection_threshold && gridArray[y][x] == 0)
 				gridArray[y][x] = 2;
 			else if (count > recovery_threshold && gridArray[y][x] == 1)
@@ -129,27 +125,21 @@ public static void main(String[] args) {
     int     recovery_threshold = Integer.parseInt(args[3]);
     String  coordinates = args[4];
 
+	if (grid < 1 || rounds < 1 || infection_threshold < 1 || recovery_threshold < 1) {
+		System.out.println("Invalid input.");
+		System.exit(0);
+	}
    
-	// comment out later
-    System.out.println("Grid: " + grid);
-    System.out.println("Rounds: " + rounds);
-    System.out.println("Infection threshold: " + infection_threshold);
-    System.out.println("Recovery threshold: " + recovery_threshold);
-	System.out.println("Coordinates: " + coordinates);
+	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
 
-	int[][] gridArray = new int[grid][grid];
-	LinkedList<Integer> coordinatesArray = new LinkedList<Integer>();
-
-	coordinatesArray = getCoordinates(coordinates, grid);
+	// int[][]				gridArray = new int[grid][grid];
+	// LinkedList<Integer>	coordinatesArray = new LinkedList<Integer>();
+	LinkedList<Integer> coordinatesArray = getCoordinates(coordinates, grid);
+	int[][]			gridArray = createGrid(grid, coordinatesArray);
 
 	// printing all the coordinates
 	System.out.println(coordinatesArray);
 
-
-	// stop program if input is not valid
-	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
-
-	gridArray = createGrid(grid, coordinatesArray);
 
 	Integer round = 0;
 	while (round < rounds) {
