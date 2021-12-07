@@ -1,7 +1,6 @@
 # Technical interview practive: assignment given by aNewSpring
 
-The technical assignment given by aNewSpring is to be done in Java. This is a practise technical interview provided by Codam. This is my first time writing code in Java.
-
+The technical assignment given by aNewSpring is to be coded in Java. This is a practise technical interview provided by Codam. This is my first time writing code in Java, so it might be a bit messy :innocent:.
 <!-- add in about anewspring? -->
 
 ## Assignment
@@ -100,46 +99,7 @@ public class TechnicalInterview {
 }
 ```
 
-A class can contain:
-- *local variables* -- variables defined inside methods, the lifetime of these are within the methods
-- *instance variables* -- variables within a class but outside of an method, these can be accessed within all the methods
-- *class variables* -- variables declared within the class, outside a method, with static keyword.
 
-##### Constructors
-Every class has a constructor (default included), at least one constructor will be invoked when creating an object. The constructor has the same name as the class. 
-
-##### Creating an object
-An object is created from a class, the new keyword is used to create a new object. 
-- declaration -- a variable declaration with a variable name with an object type
-- instantiation -- new keyword is used to create the object
-- initialization -- the new keyword is followed by a call to a constructor that initializes the new objct
-
-```java
-public static void main(String []args) {
-    TechnicalInterview myTechnicalInterview = new TechnicalInterview("java");
-}
-```
-
-#### Accessing instance variable and methods
-Instance variables and methods are accessed via created objects:
-- create an object: `Object Reference = new Constructir();`
-- call a variable: `ObjectReference.variableName;`
-- call a class method: `ObjectReference.method();`
-
-#### Variable types
-
-##### Local variables
-- declared in methods, constructors or blocks
-- created when the method, constructor or block is entered, and destroyed once this block. constructor or method ends
-- only visible within the declared method, block or constructor
-- no default value; must be assigned an initial value
-
-##### Instance variables
-- declared in a class but outside a method
-- created when an object is created and destroyed when the object is destroyed
-- visible for all method, constructors or blocks within the class
-- have default values, 0 for int, null for object references and false for booleans
-- can be accessed by calling the name inside the class, wihtin static methods be called using the fully qualified name: `ObjectReference.VariableName`
 
 <!-- CONTINUE HERE -->
 <!-- https://www.tutorialspoint.com/java/java_variable_types.htm -->

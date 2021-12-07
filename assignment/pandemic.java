@@ -132,8 +132,6 @@ public static void main(String[] args) {
    
 	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
 
-	// int[][]				gridArray = new int[grid][grid];
-	// LinkedList<Integer>	coordinatesArray = new LinkedList<Integer>();
 	LinkedList<Integer> coordinatesArray = getCoordinates(coordinates, grid);
 	int[][]			gridArray = createGrid(grid, coordinatesArray);
 
