@@ -33,7 +33,9 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	Integer y = 0;
 	while (it.hasNext()) {
 		x = it.next() - 1;
+		System.out.println("x: " + x);
 		y = it.next() - 1;
+		System.out.println("y: " + y);
 		array[y][x] = 1;
 	}
 
@@ -56,7 +58,8 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 				i++;
 			}
 			numb = Integer.parseInt(String.valueOf(pos));
-			if (numb > grid) {
+			// invalid input if numb is bigger than grid, or <= 0
+			if (numb > grid || numb <= 0) {
 				System.out.println("invalid input");
 				System.exit(0);
 			}
@@ -73,21 +76,21 @@ static void infection(int[][] gridArray, int grid, int infection_threshold, int 
 
 	for (Integer y = 0; y < grid; y++) {
 		for (Integer x = 0; x < grid; x++) {
-			if (x + 1 < grid && gridArray[y][x+1] == 1)	
+			if (x + 1 < grid && (gridArray[y][x+1] == 1 || gridArray[y][x+1] == 3))	
 				count++;
-			if (x - 1 >= 0 && gridArray[y][x-1] == 1)
+			if (x > 0 && (gridArray[y][x-1] == 1 || gridArray[y][x-1] == 3))
 				count++;
-			if (y + 1 < grid && gridArray[y+1][x] == 1)
+			if (y + 1 < grid && (gridArray[y+1][x] == 1 || gridArray[y+1][x] == 3))
 				count++;
-			if (y - 1 >= 0 && gridArray[y-1][x] == 1)
+			if (y > 0 && (gridArray[y-1][x] == 1 || gridArray[y-1][x] == 3))
 				count++;
-			if (y + 1 < grid && x + 1 < grid && gridArray[y+1][x+1] == 1)
+			if (y + 1 < grid && x + 1 < grid && (gridArray[y+1][x+1] == 1 || gridArray[y+1][x+1] == 3))
 				count++;
-			if (y + 1 < grid && x - 1 >= 0 && gridArray[y+1][x-1] == 1)
+			if (y + 1 < grid && x > 0 && (gridArray[y+1][x-1] == 1 || gridArray[y+1][x-1] == 3))
 				count++;
-			if (y - 1 >= 0 && x + 1 < grid && gridArray[y-1][x+1] == 1)
+			if (y > 0 && x + 1 < grid && (gridArray[y-1][x+1] == 1 || gridArray[y-1][x+1] == 3))
 				count++;
-			if (y - 1 >= 0 && x - 1 >= 0 && gridArray[y-1][x-1] == 1)
+			if (y > 0 && x > 0 && (gridArray[y-1][x-1] == 1 || gridArray[y-1][x-1] == 3))
 				count++;
 			// System.out.println("count : " + count);
 			// System.out.println("recov : " + infection_threshold);
@@ -110,7 +113,7 @@ static void infection(int[][] gridArray, int grid, int infection_threshold, int 
 				gridArray[y][x] = 0;
 		}
 	}
-	System.out.println("hier");
+	System.out.println("na het terugzetten");
 	for (Integer i = 0; i < grid; i++)
 		System.out.println(Arrays.toString(gridArray[i]));
 }
