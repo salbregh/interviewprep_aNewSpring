@@ -58,7 +58,7 @@ Given the following input:
 > and 6 infected people to begin with
 ```
 
-This gif displays how the infection will spread, during the 5 rounds.
+This gif displays how the infection will spread during the 5 rounds.
 
 <img src="images/pandemic.gif" width="175"/>
 
