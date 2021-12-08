@@ -14,7 +14,7 @@ public class pandemic {
 
 // denk hier over na
 static int inputCheck(int grid, int rounds, int infection_threshold, int recovery_threshold) {
-	if ((infection_threshold > 3 && grid <= 2) || infection_threshold > 8) {
+	if ((infection_threshold > 3 && grid <= 2) || infection_threshold > 8 || recovery_threshold > 8) {
 		System.out.println("Invalid input");
 		System.exit(0);
 	}
