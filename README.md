@@ -76,62 +76,7 @@ This gif displays how the infection will spread, during the 5 rounds.
 #### End state:
 <img src="end.png" width="150"/>
 
-<!-- The gif above shows how the infection wil spread. 
-- ![#3de286](https://via.placeholder.com/15/3de286/000000?text=+) `A non infected person`
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `An infected person`
-- ![#f1ee32](https://via.placeholder.com/15/f1ee32/000000?text=+) `A newly infected`
-- ![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `A recovering person` -->
-
-<!-- ### TO DO
-- [x] how to compile a file in java
-- [x] learn java basics
-- [x] check input validation
-- [x] make a 2d array
-- [ ] how to check for contacts
-- [ ] write a main to test some cases
-- [ ] add in a makefile
-- [ ] scripts that will runs tests -->
-
-
-
-<!-- ## JAVA
-
-#### Compiling java
-- `java -version` -- check which version of java is downloaded
-- `javac -version` -- check which version of javac is downloaded
-- `javac FileName.java` -- the .java file will be translated into .class file
-- `java FileName` -- execute the program, you should not append the .java etension to the file name while running the program
-
-- on my laptop I had to `brew install openjdk`, following `brew info openjdk` and run the command `sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk` to symlink, to get the javac command working.
-
-#### First program
-```java
-public class FirstJavaProgram {
-    public static void main(String []args) {
-        System.out.println("VIRUS SPREAD");
-    }
-}
-```
-
-- `public class FirstJavaProgram {` -- Every java application must have at least one class definition that consists of `class` keyword followed by class name. Java can have only one public class, the filename should be the same as the public class name. 
-- `public static void main(String []args) {` -- `public` makes the main method public which makes this method callable from outside the class. `static` we dont need to reacte a method for static methods to run. `main` the methods name, this is the entry point method from which the program starts running. `String []args` used for command line arguments that are passes as  string.
-- `System.out.println("Hello");` -- This method prints the contents into the consule and adds a new line.
-
-#### Basic syntax
-- Java is case sensitive
-- For all class names the first letter of every word should be uppercase `MyClassName`
-- All method names should start with lowercase and every inner word with uppercase `myMethodName()`
-- Program file name must match the public class name and append .java to it otherwise the program will not compile. In case there is no public class present, the file name can be different than the class name.
-- Java program start from the main() method, this is mandatory
+<!-- NOG TOE VOEGEN:
+    waar de comment staat om de tussenstappen ook in de code te zien
  -->
 
-
-
-<!-- CONTINUE HERE -->
-<!-- https://www.tutorialspoint.com/java/java_variable_types.htm -->
-
-<!-- https://www.tutorialspoint.com/java/index.htm -->
-<!-- https://www.guru99.com/java-platform.html -->
-<!-- https://www.geeksforgeeks.org/flood-fill-algorithm-implement-fill-paint/ -->
-<!-- https://www.youtube.com/watch?v=_JYlD7tzwFw -->
-<!-- https://www.w3schools.com/java/java_methods.asp -->
