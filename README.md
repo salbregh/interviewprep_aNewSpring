@@ -3,6 +3,8 @@ Technical interview practise, an assignment given by aNewSpring.
 This is a practise technical interview simulation provided by Codam. The assignment is to be coded in Java This is my first time writing code in Java, so it might be a bit messy :innocent:.
 <!-- add in about anewspring? -->
 
+![GIF](./pandemic.gif)
+
 ### Assignment
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
 
