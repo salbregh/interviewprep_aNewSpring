@@ -49,7 +49,14 @@ The spread of the pandemic is covered by a limited set of rules:
 A “contact” is defined as a person that’s directly adjacent to the infected, horizontally, vertically or diagonally (not wrapping around the edges of the grid)
 
 
-# FINALE RESULT
+# FINAL RESULT
+
+Given the input: 
+> a 5 by 5 grid
+> 5 rounds
+> an infection threshold of 2
+> an recovery threshold of 3
+> and 6 infected people to begin with
 
 `java pandemic 5 5 2 3 "[<3,1><2,2><3,2><3,3>,<4,4>,<1,5>]"`
 
