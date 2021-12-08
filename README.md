@@ -35,6 +35,8 @@ The program will exit if:
 - An incorrect amount of arguments is passed.
 - An argument is passed as 0 or negative. 
 - An coordinate is outside of the grid.
+<!-- denk hier over na -->
+- The infection rate is bigger then the number of possible neighbors.
 
 ### Rules
 The spread of the pandemic is covered by a limited set of rules:
