@@ -1,9 +1,6 @@
 # PANDEMIC SIMULATOR :mask: :microbe:
 Technical interview practice, an assignment given by aNewSpring.
-This is a practice technical interview simulation provided by Codam. The assignment is to be coded in Java. This is my first time writing code in Java, so it might be a bit messy :innocent:.
-<!-- add in about anewspring? -->
-
-<!-- ![GIF](./pandemic.gif) -->
+This is a practice technical interview simulation provided by Codam. The assignment is to be coded in Java. This is my first time writing code in Java, so it might be a bit messy. :innocent:
 
 ### Assignment :memo:
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
@@ -63,7 +60,7 @@ Given the following input:
 
 This gif displays how the infection will spread, during the 5 rounds.
 
-<img src="pandemic.gif" width="150"/>
+<img src="images/pandemic.gif" width="150"/>
 
 - ![#3de286](https://via.placeholder.com/15/3de286/000000?text=+) `A non infected person`
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `An infected person`
@@ -71,10 +68,10 @@ This gif displays how the infection will spread, during the 5 rounds.
 - ![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `A recovering person`
 
 #### Begin state:
-<img src="begin.png" width="150"/>
+<img src="images/begin.png" width="150"/>
 
 #### End state:
-<img src="end.png" width="150"/>
+<img src="images/end.png" width="150"/>
 
 <!-- NOG TOE VOEGEN:
     waar de comment staat om de tussenstappen ook in de code te zien
