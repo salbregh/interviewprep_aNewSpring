@@ -72,9 +72,10 @@ This gif displays how the infection will spread, during the 5 rounds.
 <img src="end.png" width="150"/>
 
 The gif above shows how the infection wil spread. 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
+- ![#3de286](https://via.placeholder.com/15/3de286/000000?text=+) `A non infected person`
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `An infected person`
+- ![#f1ee32](https://via.placeholder.com/15/f1ee32/000000?text=+) `A newly infected person`
+- ![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `A recovering person`
 
 <!-- ### TO DO
 - [x] how to compile a file in java
