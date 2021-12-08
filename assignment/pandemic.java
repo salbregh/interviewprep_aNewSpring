@@ -83,9 +83,6 @@ static void	print(int[][] array, int grid) {
 
 static void infection(int[][] array, int grid, int infection, int recovery, int round) {
 	Integer		count = 0;
-
-	// System.out.println("STATE ROUND: " + round);
-	// print(array, grid);
 	
 	for (Integer y = 0; y < grid; y++) {
 		for (Integer x = 0; x < grid; x++) {
@@ -114,11 +111,10 @@ static void infection(int[][] array, int grid, int infection, int recovery, int 
 		}
 	}
 
-	System.out.println("CHANGE ROUND: " + round);
-	print(array, grid);
-
-	// for (Integer i = 0; i < grid; i++)
-	// 	System.out.println(Arrays.toString(array[i]));
+	/* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
+	// System.out.println("SEE SPREAD ROUND 4: " + round);
+	// print(array, grid);
+	
 	for (Integer x = 0; x < grid; x++) {
 		for (Integer y = 0; y < grid ; y++) {
 			if (array[y][x] == 2)
@@ -128,11 +124,9 @@ static void infection(int[][] array, int grid, int infection, int recovery, int 
 		}
 	}
 
-	System.out.println("FINAL ROUND: " + round);
-	print(array, grid);
-	// for (Integer i = 0; i < grid; i++)
-		// System.out.println(Arrays.toString(array[i]));
-	// System.out.println();
+	/* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
+	// System.out.println("SEE OUTCOME SPREAD ROUND: " + round);
+	// print(array, grid);
 }
 
 public static void main(String[] args) {
@@ -156,17 +150,14 @@ public static void main(String[] args) {
 	LinkedList<Integer> coordinatesArray = getCoordinates(coordinates, grid);
 	int[][]			array = createGrid(grid, coordinatesArray);
 
-	// printing all the coordinates
-	// System.out.println(coordinatesArray);
-
-
 	Integer round = 0;
+	System.out.println("BEGIN STATE");
+	print(array, grid);
 	while (round < rounds) {
-		System.out.println("STATE ROUND: " + round);
-			print(array, grid);
 		round++;
 		infection(array, grid, infection_threshold, recovery_threshold, round);
 	}
-}
-
+	System.out.println("FINAL STATE");
+	print(array, grid);
+	}
 }

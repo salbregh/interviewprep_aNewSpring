@@ -73,7 +73,11 @@ This gif displays how the infection will spread, during the 5 rounds.
 #### End state:
 <img src="images/end.png" width="150"/>
 
-<!-- NOG TOE VOEGEN:
-    waar de comment staat om de tussenstappen ook in de code te zien
- -->
+The inbetween steps that the gif shows can also be showed as output.
+Just comment out line 115 and 116, and also line 128 and 129.
+```java
+/* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
+// System.out.println("SEE SPREAD ROUND 4: " + round);
+// print(array, grid);
+```
 
