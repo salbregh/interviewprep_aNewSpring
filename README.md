@@ -5,7 +5,7 @@ This is a practice technical interview simulation provided by Codam. The assignm
 
 <!-- ![GIF](./pandemic.gif) -->
 
-### Assignment
+### Assignment :memopencil:
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
 
 The mission is to build a simulation (using JAVA) that models this spread on a grid of n*n persons. The simulation, running over the course of a number of iterations, or “rounds”, will be based on the simple assumption that the virus spreads through contact between adjacent people. If the number of contacts reaches a certain threshold, a person will become infected. When an infected person is surrounded by more than a certain threshold of infected people, the virus will die out and that person will recover and become uninfected again.
@@ -26,11 +26,11 @@ After a number of rounds the output should be displayed.
 > 5th parameter: coordinates infected people: `[<4,7>,<4,8>,<5,8>]`
 ```
 
-### Input Handling
+### Input Handling :pencil2:
 Seeing I can't figure out how to read the coordinates as argmuments I choose to add double quotes to the last argument so that I am able to parse through it as a string `"[<4,7>,<4,8>,<5,8>]"`.
 So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,8>,<5,8>]"`
 
-### Error checking
+### Error checking :no_entry:
 Trying to make the model fit the real world, I inplied the following error checks. The program will exit if:
 - An incorrect amount of arguments is passed.
 - An argument is passed as 0 or negative. 
@@ -38,7 +38,7 @@ Trying to make the model fit the real world, I inplied the following error check
 - The infection rate is bigger then the number of possible neighbors.
 <!-- denk hier over na -->
 
-### Rules
+### Rules :scroll:
 The spread of the pandemic is covered by a limited set of rules:
 - Any person with a number of infected contacts larger than the infection threshold will become infected
 - Any infected person with more than the recovery threshold  infected contacts, will recover and become uninfected.
