@@ -80,4 +80,9 @@ Just comment out line 135 and 136, and also line 148 and 149 of the pandemic.jav
 // System.out.println("SEE SPREAD ROUND : " + round);
 // print(array, grid);;
 ```
+```java
+/* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
+// System.out.println("SEE OUTCOME SPREAD ROUND: " + round);
+// print(array, grid);
+```
 
