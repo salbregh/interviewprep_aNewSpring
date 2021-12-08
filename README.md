@@ -5,8 +5,6 @@ This is a practise technical interview simulation provided by Codam. The assignm
 
 <!-- ![GIF](./pandemic.gif) -->
 
-<img src="pandemic.gif" width="150"/>
-
 ### Assignment
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
 
@@ -62,7 +60,8 @@ Given the input:
 
 <img src="pandemic.gif" width="150"/>
 
-
+The gif above shows how the infection wil spread. 
+- Green: 
 
 <!-- ### TO DO
 - [x] how to compile a file in java
