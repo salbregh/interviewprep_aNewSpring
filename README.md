@@ -30,7 +30,7 @@ After a number of rounds the output should be displayed.
 Seeing I can't figure out how to read the coordinates as argmuments I choose to add double quotes to the last argument so that I am able to parse through it as a string `"[<4,7>,<4,8>,<5,8>]"`.
 So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,8>,<5,8>]"`
 
-## Error checking:
+### Error checking
 Trying to make the model fit the real world, I inplied the following error checks. The program will exit if:
 - An incorrect amount of arguments is passed.
 - An argument is passed as 0 or negative. 
