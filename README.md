@@ -72,8 +72,9 @@ This gif displays how the infection will spread, during the 5 rounds.
 <img src="end.png" width="150"/>
 
 The gif above shows how the infection wil spread. 
-- :red_circle:
-- :green_circle:
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
 
 <!-- ### TO DO
 - [x] how to compile a file in java
