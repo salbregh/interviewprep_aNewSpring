@@ -47,7 +47,7 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 - So if the infection threshold is 2, a person will be infected if 3 or more neighbors are infected.
 - And if the recovery threshold is 3, a person will be infected if 4 or more neighbors are infected.
 
-# FINAL RESULT
+# FINAL RESULT :chart_with_upwards_trend:
 
 Given the input: 
 > a 5 by 5 grid
