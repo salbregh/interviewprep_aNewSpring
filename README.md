@@ -65,7 +65,6 @@ This gif displays how the infection will spread, during the 5 rounds.
 
 <img src="pandemic.gif" width="150"/>
 
-The gif above shows how the infection wil spread. 
 - ![#3de286](https://via.placeholder.com/15/3de286/000000?text=+) `A non infected person`
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `An infected person`
 - ![#f1ee32](https://via.placeholder.com/15/f1ee32/000000?text=+) `A newly infected`
