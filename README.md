@@ -5,7 +5,7 @@ This is a practice technical interview simulation provided by Codam. The assignm
 
 <!-- ![GIF](./pandemic.gif) -->
 
-### Assignment :memopencil:
+### Assignment :memo::pencil:
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
 
 The mission is to build a simulation (using JAVA) that models this spread on a grid of n*n persons. The simulation, running over the course of a number of iterations, or “rounds”, will be based on the simple assumption that the virus spreads through contact between adjacent people. If the number of contacts reaches a certain threshold, a person will become infected. When an infected person is surrounded by more than a certain threshold of infected people, the virus will die out and that person will recover and become uninfected again.
