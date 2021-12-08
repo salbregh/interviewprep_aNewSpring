@@ -75,7 +75,7 @@ This gif displays how the infection will spread during the 5 rounds.
 
 The inbetween steps that the gif shows can also be printed as output.
 Just comment out line 115 and 116, and also line 128 and 129 of the pandemic.java file.
-```{r, attr.source='.numberLines startFrom="114"'}
+```{java, attr.source='.numberLines startFrom="114"'}
 /* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
 // System.out.println("SEE SPREAD ROUND 4: " + round);
 // print(array, grid);
