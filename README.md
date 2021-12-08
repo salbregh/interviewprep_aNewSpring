@@ -17,7 +17,7 @@ For example, a simulation on an 8x8 grid, with 7 rounds, an infection threshold 
 
 After a number of rounds the output should be displayed.
 
-```bash
+```
 > program name: pandemic
 > 1st parameter: n * n grid: `8`
 > 2nd parameter: numer of rounds: `7`
