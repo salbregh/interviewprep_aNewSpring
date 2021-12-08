@@ -31,9 +31,9 @@ So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,
 Trying to make the model fit the real world, I inplied the following error checks. The program will exit if:
 - An incorrect amount of arguments is passed.
 - An argument is passed as 0 or negative. 
+- The grid is smaller than 2.
 - An coordinate is outside of the grid.
 - The infection rate is bigger then the number of possible neighbors.
-<!-- denk hier over na -->
 
 ### Rules :scroll:
 The spread of the pandemic is covered by a limited set of rules:
@@ -60,7 +60,7 @@ Given the following input:
 
 This gif displays how the infection will spread, during the 5 rounds.
 
-<img src="images/pandemic.gif" width="150"/>
+<img src="images/pandemic.gif" width="175"/>
 
 - ![#3de286](https://via.placeholder.com/15/3de286/000000?text=+) `A non infected person`
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `An infected person`
@@ -74,7 +74,7 @@ This gif displays how the infection will spread, during the 5 rounds.
 <img src="images/end.png" width="150"/>
 
 The inbetween steps that the gif shows can also be showed as output.
-Just comment out line 115 and 116, and also line 128 and 129.
+Just comment out line 115 and 116, and also line 128 and 129 of the pandemic.java file.
 ```java
 /* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
 // System.out.println("SEE SPREAD ROUND 4: " + round);

@@ -7,19 +7,20 @@ public class pandemic {
 **	if the grid is bigger a person can have a maximum of 8 neighbors
 **	in both these cases this will be seen as invalid input 
 **	seeing that no one will be infected.
-
-**	Also do a check if the coordinates are within the grid
-**	if the right amount of coordinates are given
 */
 
-// denk hier over na
 static int inputCheck(int grid, int rounds, int infection_threshold, int recovery_threshold) {
-	if ((infection_threshold > 3 && grid <= 2) || infection_threshold > 8 || recovery_threshold > 8) {
-		System.out.println("Invalid input");
+	if (grid < 2 || rounds < 1 || infection_threshold < 1 || recovery_threshold < 1 ||
+		(infection_threshold > 3 && grid <= 2) || infection_threshold > 8 || recovery_threshold > 8) {
+		System.out.println("Invalid input.");
 		System.exit(0);
 	}
 	return (0);
 }
+
+/*
+**	Creates a 2D array with the coordinates added in.
+*/
 
 static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	int[][]	array = new int[grid][grid];
@@ -28,7 +29,6 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 			array[i][j] = 0;
 		}
 	}
-	// fill the grid with the coordinates
 	ListIterator<Integer>	it = coordinatesArray.listIterator();
 	Integer x = 0;
 	Integer y = 0;
@@ -40,10 +40,16 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 	return (array);
 }
 
+/*
+**	Function that gets the coordinates out of the string argument given.
+**	Also checks if the coordinates are within the given grid, if not
+**	an error is returned and the program exits.
+*/
+
 static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
-	Integer		i = 0;
-	Integer		numb = 0;
-	String		pos = "";
+	Integer				i = 0;
+	Integer				numb = 0;
+	String				pos = "";
 	LinkedList<Integer> coordinatesArray = new LinkedList<Integer>();
 	
 	while (i < Coordinates.length()) {
@@ -53,7 +59,7 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 				i++;
 			}
 			numb = Integer.parseInt(String.valueOf(pos));
-			if (numb > grid || numb <= 0) {
+			if (numb > grid || numb < 1) {
 				System.out.println("invalid input");
 				System.exit(0);
 			}
@@ -65,21 +71,35 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 	return (coordinatesArray);
 }
 
+/*
+**	Print color functions to visualize the infection spread.
+**	0 = not infected: green
+**	1 = infected: red
+**	2 = newly infected: yellow
+**	3 = recovering: white
+*/
+
 static void	print(int[][] array, int grid) {
 	for (Integer i = 0; i < grid; i++) {
 		for (Integer j = 0; j < grid; j++) {
-			if (array[i][j] == 0) // NOT infected
+			if (array[i][j] == 0)
 				System.out.printf(Colors.GREEN_BACKGROUND + "%s", " 0 " + Colors.RESET);
-			if (array[i][j] == 1) // INFECTED
+			if (array[i][j] == 1)
 				System.out.printf(Colors.RED_BACKGROUND + "%s", " 1 " + Colors.RESET);
-			if (array[i][j] == 2) // NEWLY infected
+			if (array[i][j] == 2)
 				System.out.printf(Colors.YELLOW_BACKGROUND + "%s", " 2 " + Colors.RESET);
-			if (array[i][j] == 3) // recovering
+			if (array[i][j] == 3)
 				System.out.printf(Colors.WHITE_BACKGROUND + "%s", " 3 " + Colors.RESET);
 		}
 		System.out.println();
 	}
 }
+
+/*
+**	Function that checks all neighbors of every person.
+**	If count increases everytime a neighbor is infected, change the persons infection state
+**	depended on its state en its number of infected neigbors.
+*/
 
 static void infection(int[][] array, int grid, int infection, int recovery, int round) {
 	Integer		count = 0;
@@ -129,35 +149,35 @@ static void infection(int[][] array, int grid, int infection, int recovery, int 
 	// print(array, grid);
 }
 
+
 public static void main(String[] args) {
 	if (args.length != 5) {
 		System.out.println("invalid input");
 		System.exit(0);
 	}
+	
     int 	grid = Integer.parseInt(args[0]);
     int 	rounds = Integer.parseInt(args[1]);
     int 	infection_threshold = Integer.parseInt(args[2]);
     int     recovery_threshold = Integer.parseInt(args[3]);
     String  coordinates = args[4];
-
-	if (grid < 1 || rounds < 1 || infection_threshold < 1 || recovery_threshold < 1) {
-		System.out.println("Invalid input.");
-		System.exit(0);
-	}
    
 	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
 
 	LinkedList<Integer> coordinatesArray = getCoordinates(coordinates, grid);
-	int[][]			array = createGrid(grid, coordinatesArray);
+	int[][]				array = createGrid(grid, coordinatesArray);
 
-	Integer round = 0;
 	System.out.println("BEGIN STATE");
 	print(array, grid);
+
+	Integer round = 0;
 	while (round < rounds) {
 		round++;
 		infection(array, grid, infection_threshold, recovery_threshold, round);
 	}
+
 	System.out.println("FINAL STATE");
 	print(array, grid);
-	}
+}
+
 }
