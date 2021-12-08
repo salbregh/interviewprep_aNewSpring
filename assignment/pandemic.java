@@ -132,7 +132,7 @@ static void infection(int[][] array, int grid, int infection, int recovery, int 
 	}
 
 	/* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
-	// System.out.println("SEE SPREAD ROUND 4: " + round);
+	// System.out.println("SEE SPREAD ROUND : " + round);
 	// print(array, grid);
 	
 	for (Integer x = 0; x < grid; x++) {
