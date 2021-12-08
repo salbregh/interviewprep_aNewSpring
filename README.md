@@ -48,7 +48,16 @@ The spread of the pandemic is covered by a limited set of rules:
 - All others don’t change.
 A “contact” is defined as a person that’s directly adjacent to the infected, horizontally, vertically or diagonally (not wrapping around the edges of the grid)
 
-### TO DO
+
+# FINALE RESULT
+
+`java pandemic 5 5 2 3 "[<3,1><2,2><3,2><3,3>,<4,4>,<1,5>]"`
+
+<img src="pandemic.gif" width="150"/>
+
+
+
+<!-- ### TO DO
 - [x] how to compile a file in java
 - [x] learn java basics
 - [x] check input validation
@@ -56,11 +65,11 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 - [ ] how to check for contacts
 - [ ] write a main to test some cases
 - [ ] add in a makefile
-- [ ] scripts that will runs tests
+- [ ] scripts that will runs tests -->
 
 
 
-## JAVA
+<!-- ## JAVA
 
 #### Compiling java
 - `java -version` -- check which version of java is downloaded
@@ -89,7 +98,7 @@ public class FirstJavaProgram {
 - All method names should start with lowercase and every inner word with uppercase `myMethodName()`
 - Program file name must match the public class name and append .java to it otherwise the program will not compile. In case there is no public class present, the file name can be different than the class name.
 - Java program start from the main() method, this is mandatory
-
+ -->
 
 
 
