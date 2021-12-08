@@ -61,10 +61,15 @@ Given the following input:
 > and 6 infected people to begin with
 ```
 
-
-
+This gif displays how the infection will spread, during the 5 rounds.
 
 <img src="pandemic.gif" width="150"/>
+
+#### Begin state:
+<img src="begin.png" width="150"/>
+
+#### End state:
+<img src="end.png" width="150"/>
 
 The gif above shows how the infection wil spread. 
 - Green: 
