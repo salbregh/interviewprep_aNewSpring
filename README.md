@@ -1,4 +1,4 @@
-# Virus spread simulation :mask: :microbe:
+# PANDEMIC SIMULATOR :mask: :microbe:
 Technical interview practise, an assignment given by aNewSpring.
 This is a practise technical interview simulation provided by Codam. The assignment is to be coded in Java This is my first time writing code in Java, so it might be a bit messy :innocent:.
 <!-- add in about anewspring? -->
