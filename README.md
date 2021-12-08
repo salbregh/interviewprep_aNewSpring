@@ -1,6 +1,6 @@
 # PANDEMIC SIMULATOR :mask: :microbe:
-This is a practice technical interview simulation provided by Codam Coding College, with an assignment given by aNewSpring.
-The assignment is to be coded in Java. This is my first time writing code in Java, so it might be a bit messy. :innocent:
+Technical interview practice, an assignment given by aNewSpring.
+This is a practice technical interview simulation provided by Codam. The assignment is to be coded in Java. This is my first time writing code in Java, so it might be a bit messy. :innocent:
 
 ### Assignment :memo:
 The current pandemic is of course all over the news these days. Trying to get it under control requires the right information and one of the key pieces of information is how the virus spreads. In order to investigate this, simulations of the spread of the virus are used. 
@@ -73,12 +73,11 @@ This gif displays how the infection will spread during the 5 rounds.
 #### End state:
 <img src="images/end.png" width="150"/>
 
-The inbetween steps that the gif shows can also be printed as output.
-Just comment out line 115 and 116, and also line 128 and 129 of the pandemic.java file.
-```javascript showLineNumbers highlightLine=1-5,
+The inbetween steps that the gif shows can also be showed as output.
+Just comment out line 135 and 136, and also line 148 and 149 of the pandemic.java file.
+```java
 /* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
 // System.out.println("SEE SPREAD ROUND : " + round);
-// print(array, grid);
+// print(array, grid);;
 ```
-
 
