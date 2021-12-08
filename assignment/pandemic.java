@@ -1,7 +1,5 @@
 import java.util.*;
 
-
-
 public class pandemic {
 
 /*
@@ -38,9 +36,6 @@ static int[][] 	createGrid(int grid, LinkedList<Integer> coordinatesArray) {
 		y = it.next() - 1;
 		array[y][x] = 1;
 	}
-
-	for (Integer i = 0; i < grid; i++)
-		System.out.println(Arrays.toString(array[i]));
 	return (array);
 }
 
@@ -69,49 +64,74 @@ static LinkedList<Integer>	getCoordinates(String Coordinates, int grid) {
 	return (coordinatesArray);
 }
 
-static void infection(int[][] gridArray, int grid, int infection_threshold, int recovery_threshold) {
+static void	print(int[][] array, int grid) {
+	for (Integer i = 0; i < grid; i++) {
+		for (Integer j = 0; j < grid; j++) {
+			if (array[i][j] == 0) // NOT infected
+				System.out.printf(Colors.GREEN_BACKGROUND + "%s", " 0 " + Colors.RESET);
+			if (array[i][j] == 1) // INFECTED
+				System.out.printf(Colors.RED_BACKGROUND + "%s", " 1 " + Colors.RESET);
+			if (array[i][j] == 2) // NEWLY infected
+				System.out.printf(Colors.YELLOW_BACKGROUND + "%s", " 2 " + Colors.RESET);
+			if (array[i][j] == 3) // recovering
+				System.out.printf(Colors.WHITE_BACKGROUND + "%s", " 3 " + Colors.RESET);
+		}
+		System.out.println();
+	}
+}
+
+static void infection(int[][] array, int grid, int infection, int recovery, int round) {
 	Integer		count = 0;
 
+	// System.out.println("STATE ROUND: " + round);
+	// print(array, grid);
+	
 	for (Integer y = 0; y < grid; y++) {
 		for (Integer x = 0; x < grid; x++) {
-			if (x + 1 < grid && (gridArray[y][x+1] == 1 || gridArray[y][x+1] == 3))	
+			if (x + 1 < grid && (array[y][x+1] == 1 || array[y][x+1] == 3))	
 				count++;
-			if (x > 0 && (gridArray[y][x-1] == 1 || gridArray[y][x-1] == 3))
+			if (x > 0 && (array[y][x-1] == 1 || array[y][x-1] == 3))
 				count++;
-			if (y + 1 < grid && (gridArray[y+1][x] == 1 || gridArray[y+1][x] == 3))
+			if (y + 1 < grid && (array[y+1][x] == 1 || array[y+1][x] == 3))
 				count++;
-			if (y > 0 && (gridArray[y-1][x] == 1 || gridArray[y-1][x] == 3))
+			if (y > 0 && (array[y-1][x] == 1 || array[y-1][x] == 3))
 				count++;
-			if (y + 1 < grid && x + 1 < grid && (gridArray[y+1][x+1] == 1 || gridArray[y+1][x+1] == 3))
+			if (y + 1 < grid && x + 1 < grid && (array[y+1][x+1] == 1 || array[y+1][x+1] == 3))
 				count++;
-			if (y + 1 < grid && x > 0 && (gridArray[y+1][x-1] == 1 || gridArray[y+1][x-1] == 3))
+			if (y + 1 < grid && x > 0 && (array[y+1][x-1] == 1 || array[y+1][x-1] == 3))
 				count++;
-			if (y > 0 && x + 1 < grid && (gridArray[y-1][x+1] == 1 || gridArray[y-1][x+1] == 3))
+			if (y > 0 && x + 1 < grid && (array[y-1][x+1] == 1 || array[y-1][x+1] == 3))
 				count++;
-			if (y > 0 && x > 0 && (gridArray[y-1][x-1] == 1 || gridArray[y-1][x-1] == 3))
+			if (y > 0 && x > 0 && (array[y-1][x-1] == 1 || array[y-1][x-1] == 3))
 				count++;
 
-			if (count > infection_threshold && gridArray[y][x] == 0)
-				gridArray[y][x] = 2;
-			else if (count > recovery_threshold && gridArray[y][x] == 1)
-				gridArray[y][x] = 3;
+			if (count > infection && array[y][x] == 0)
+				array[y][x] = 2;
+			else if (count > recovery && array[y][x] == 1)
+				array[y][x] = 3;
 			count = 0;
 		}
 	}
-	System.out.println("voor terug zetten:");
-	for (Integer i = 0; i < grid; i++)
-				System.out.println(Arrays.toString(gridArray[i]));
+
+	System.out.println("CHANGE ROUND: " + round);
+	print(array, grid);
+
+	// for (Integer i = 0; i < grid; i++)
+	// 	System.out.println(Arrays.toString(array[i]));
 	for (Integer x = 0; x < grid; x++) {
 		for (Integer y = 0; y < grid ; y++) {
-			if (gridArray[y][x] == 2)
-				gridArray[y][x] = 1;
-			if (gridArray[y][x] == 3)
-				gridArray[y][x] = 0;
+			if (array[y][x] == 2)
+				array[y][x] = 1;
+			if (array[y][x] == 3)
+				array[y][x] = 0;
 		}
 	}
-	System.out.println("na het terugzetten");
-	for (Integer i = 0; i < grid; i++)
-		System.out.println(Arrays.toString(gridArray[i]));
+
+	System.out.println("FINAL ROUND: " + round);
+	print(array, grid);
+	// for (Integer i = 0; i < grid; i++)
+		// System.out.println(Arrays.toString(array[i]));
+	// System.out.println();
 }
 
 public static void main(String[] args) {
@@ -133,16 +153,18 @@ public static void main(String[] args) {
 	inputCheck(grid, rounds, infection_threshold, recovery_threshold);
 
 	LinkedList<Integer> coordinatesArray = getCoordinates(coordinates, grid);
-	int[][]			gridArray = createGrid(grid, coordinatesArray);
+	int[][]			array = createGrid(grid, coordinatesArray);
 
 	// printing all the coordinates
-	System.out.println(coordinatesArray);
+	// System.out.println(coordinatesArray);
 
 
 	Integer round = 0;
 	while (round < rounds) {
-		infection(gridArray, grid, infection_threshold, recovery_threshold);
+		System.out.println("STATE ROUND: " + round);
+			print(array, grid);
 		round++;
+		infection(array, grid, infection_threshold, recovery_threshold, round);
 	}
 }
 
