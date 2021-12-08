@@ -19,14 +19,14 @@ After a number of rounds the output should be displayed.
 
 ```
 > program name: pandemic
-> 1st parameter: n * n grid: `8`
-> 2nd parameter: numer of rounds: `7`
-> 3rd parameter: infection threshold: `3`
-> 4th parameter: recovery threshold: `6`
+> 1st parameter: n * n grid: 8
+> 2nd parameter: numer of rounds: 7
+> 3rd parameter: infection threshold: 3
+> 4th parameter: recovery threshold: 6
 > 5th parameter: coordinates infected people: `[<4,7>,<4,8>,<5,8>]`
 ```
 
-### How I will handle the input
+### Input
 Seeing I can't figure out how to read the coordinates as argmuments I choose to add double quotes to the last argument so that I am able to parse through it as a string `"[<4,7>,<4,8>,<5,8>]"`.
 So the input I will be working with will be : `java pandemic 8 7 3 6 "[<4,7>,<4,8>,<5,8>]"`
 
