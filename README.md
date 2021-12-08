@@ -73,8 +73,8 @@ This gif displays how the infection will spread during the 5 rounds.
 #### End state:
 <img src="images/end.png" width="150"/>
 
-The inbetween steps that the gif shows can also be showed as output.
-Just comment out line 135 and 136, and also line 148 and 149 of the pandemic.java file.
+The inbetween steps that the gif shows can also be showed as output, so it will print more than begin and end state
+Just comment out lines 135 and 136, and also lines 148 and 149 of the pandemic.java file.
 ```java
 /* UNCOMMENT TO SEE HOW THE VIRUS SPREADS */
 // System.out.println("SEE SPREAD ROUND : " + round);
