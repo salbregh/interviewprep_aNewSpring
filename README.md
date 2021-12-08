@@ -49,8 +49,11 @@ A “contact” is defined as a person that’s directly adjacent to the infecte
 
 # FINAL RESULT :chart_with_upwards_trend:
 
+Given the following input: 
+
+`java pandemic 5 5 2 3 "[<3,1><2,2><3,2><3,3>,<4,4>,<1,5>]"`
+
 ```
-Given the input: 
 > a 5 by 5 grid
 > 5 rounds
 > an infection threshold of 2
@@ -58,7 +61,8 @@ Given the input:
 > and 6 infected people to begin with
 ```
 
-`java pandemic 5 5 2 3 "[<3,1><2,2><3,2><3,3>,<4,4>,<1,5>]"`
+
+
 
 <img src="pandemic.gif" width="150"/>
 
